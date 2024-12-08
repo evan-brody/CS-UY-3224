@@ -71,8 +71,9 @@ int main(int argc, char** argv) {
 
     // Output to csv
     std::ofstream pageFaultFile("pageFaults.csv");
+    pageFaultFile << "Frames,Page Faults\n";
     for (int f = 4; f <= p; f++) {
-        pageFaultFile << pageFaultCounts[f - 4] << ',';
+        pageFaultFile << f << ',' << pageFaultCounts[f - 4] << '\n';
     }
     delete[] pageFaultCounts;
 
